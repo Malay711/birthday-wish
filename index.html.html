@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Sakshi Patel 🎂💖</title>
+    <style>
+      /*
+        ------------------------------------------
+        1. GLOBAL STYLES & FONT IMPORT
+        ------------------------------------------
+        */
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap");
+
+      :root {
+        /* Soft Pastel Palette */
+        --color-pink: #ffc0cb; /* Soft Pink */
+        --color-lavender: #e6e6fa; /* Lavender */
+        --color-peach: #ffe5b4; /* Light Peach */
+        --color-blue: #add8e6; /* Baby Blue */
+        --color-cream: #f970d0; /* Cream */
+        --color-accent: #ff69b4; /* Hot Pink Accent */
+        --color-text-dark: #3a3a5a;
+        --color-text-light: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--color-text-dark);
+        background: linear-gradient(
+          135deg,
+          var(--color-cream) 0%,
+          var(--color-lavender) 100%
+        );
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      section {
+        padding: 80px 5%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* Scroll animation setup */
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h2 {
+        font-family: "Dancing Script", cursive;
+        font-size: 3em;
+        margin-bottom: 40px;
+        color: var(--color-accent);
+        text-shadow: 2px 2px 8px rgba(255, 105, 180, 0.2);
+        text-align: center;
+        font-weight: 700;
+      }
+
+      /*
+        ------------------------------------------
+        2. HERO SECTION
+        ------------------------------------------
+        */
+      #hero {
+        background: linear-gradient(
+          45deg,
+          var(--color-pink) 0%,
+          var(--color-blue) 100%
+        );
+        min-height: 100vh;
+        text-align: center;
+        overflow: hidden;
+        color: var(--color-text-light);
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-heading {
+        font-family: "Montserrat", sans-serif;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 15px;
+        animation: softGlow 3s ease-in-out infinite alternate;
+      }
+
+      .hero-subheading {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 400;
+        color: var(--color-cream);
+      }
+
+      .hero-line {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        font-style: italic;
+        margin-top: 20px;
+        font-weight: 300;
+        opacity: 0.9;
+      }
+
+      @keyframes softGlow {
+        from {
+          text-shadow: 0 0 10px var(--color-cream), 0 0 20px var(--color-accent);
+        }
+        to {
+          text-shadow: 0 0 15px var(--color-cream), 0 0 30px var(--color-accent);
+        }
+      }
+
+      /* Floating Hearts */
+      .heart {
+        position: absolute;
+        background: var(--color-accent);
+        width: 15px;
+        height: 15px;
+        transform: rotate(-45deg);
+        z-index: 1;
+        animation: floatUp 10s linear infinite;
+        opacity: 0;
+        border-radius: 4px;
+      }
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: inherit;
+        border-radius: 50%;
+      }
+      .heart::before {
+        top: -7.5px;
+        left: 0;
+      }
+      .heart::after {
+        top: 0;
+        left: 7.5px;
+      }
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) rotate(-45deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-10vh) rotate(-45deg);
+          opacity: 0;
+        }
+      }
+      /* Randomizing the hearts */
+      .heart:nth-child(2n) {
+        background: var(--color-cream);
+        animation-duration: 8s;
+        left: 10%;
+        transform: scale(0.9) rotate(-45deg);
+      }
+      .heart:nth-child(3n) {
+        background: var(--color-lavender);
+        animation-duration: 12s;
+        left: 30%;
+        transform: scale(1.1) rotate(-45deg);
+      }
+      .heart:nth-child(4n) {
+        background: var(--color-pink);
+        animation-duration: 9s;
+        left: 50%;
+        transform: scale(0.7) rotate(-45deg);
+      }
+      .heart:nth-child(5n) {
+        background: var(--color-blue);
+        animation-duration: 11s;
+        left: 70%;
+        transform: scale(1.3) rotate(-45deg);
+      }
+      .heart:nth-child(1) {
+        animation-delay: 1s;
+        left: 5%;
+      }
+      .heart:nth-child(2) {
+        animation-delay: 3s;
+        left: 15%;
+      }
+      .heart:nth-child(3) {
+        animation-delay: 5s;
+        left: 25%;
+      }
+      .heart:nth-child(4) {
+        animation-delay: 7s;
+        left: 40%;
+      }
+      .heart:nth-child(5) {
+        animation-delay: 9s;
+        left: 60%;
+      }
+      .heart:nth-child(6) {
+        animation-delay: 11s;
+        left: 80%;
+      }
+
+      /*
+        ------------------------------------------
+        3. MESSAGE SECTION
+        ------------------------------------------
+        */
+      #message {
+        background: linear-gradient(
+          135deg,
+          var(--color-cream),
+          var(--color-peach)
+        );
+      }
+
+      .message-card {
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        line-height: 1.8;
+        text-align: left;
+        border-left: 8px solid var(--color-accent);
+        transition: transform 0.3s ease;
+      }
+      .message-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .message-card p {
+        font-size: 1.05em;
+        margin-bottom: 25px;
+      }
+
+      .highlight {
+        color: var(--color-accent);
+        font-weight: 700;
+        font-family: "Dancing Script", cursive;
+        font-size: 1.5em;
+      }
+
+      .signature {
+        display: block;
+        text-align: right;
+        font-family: "Dancing Script", cursive;
+        font-size: 2.2em;
+        color: var(--color-blue);
+        margin-top: 30px;
+      }
+
+      /* 🔥 PREMIUM GALLERY ANIMATION */
+      /* ✅ PERFECT ROW LAYOUT FOR PREMIUM GALLERY */
+
+      .gallery {
+        display: grid;
+        gap: 26px;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      /* ✅ DESKTOP / LAPTOP – 4 IMAGES PER ROW */
+      @media (min-width: 1024px) {
+        .gallery {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* ✅ TABLET – 3 IMAGES PER ROW */
+      @media (max-width: 1023px) and (min-width: 700px) {
+        .gallery {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* ✅ MOBILE – 2 IMAGES PER ROW */
+      @media (max-width: 699px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* ✅ SMALL MOBILE – 1 IMAGE PER ROW */
+      @media (max-width: 420px) {
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .premium-gallery {
+        perspective: 1200px;
+      }
+
+      .photo-card.premium {
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+        transform-style: preserve-3d;
+        animation: fadeUp 1s ease forwards;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .photo-card.premium:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .photo-card.premium:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .photo-card.premium:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .photo-card.premium:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .photo-card.premium:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .photo-card.premium:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .photo-card.premium:nth-child(7) {
+        animation-delay: 0.7s;
+      }
+      .photo-card.premium:nth-child(8) {
+        animation-delay: 0.8s;
+      }
+      .photo-card.premium:nth-child(9) {
+        animation-delay: 0.9s;
+      }
+      .photo-card.premium:nth-child(10) {
+        animation-delay: 1s;
+      }
+      .photo-card.premium:nth-child(11) {
+        animation-delay: 1.1s;
+      }
+      .photo-card.premium:nth-child(12) {
+        animation-delay: 1.2s;
+      }
+
+      @keyframes fadeUp {
+        from {
+          transform: translateY(50px) rotateX(15deg);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0) rotateX(0deg);
+          opacity: 1;
+        }
+      }
+
+      .photo-card.premium img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        transition: 0.6s;
+      }
+
+      .photo-card.premium:hover {
+        transform: rotateY(8deg) rotateX(6deg) scale(1.05);
+        box-shadow: 0 30px 60px rgba(255, 95, 158, 0.55);
+      }
+
+      .photo-card.premium:hover img {
+        transform: scale(1.1);
+      }
+
+      .photo-card.premium p {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        padding: 14px;
+        font-weight: 600;
+      }
+
+      /* ✅ FINAL FIXED LIGHTBOX */
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+
+        z-index: 99999; /* 🔥 SABKE UPAR */
+      }
+
+      .lightbox.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 20px;
+        box-shadow: 0 0 60px var(--color-accent);
+        animation: zoomIn 0.4s ease;
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.6);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      #closeLightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 50px;
+        color: white;
+        cursor: pointer;
+        z-index: 100000;
+      }
+
+      /*
+        ------------------------------------------
+        5. WISHES SECTION
+        ------------------------------------------
+        */
+      #wishes {
+        background: linear-gradient(
+          135deg,
+          var(--color-peach),
+          var(--color-pink)
+        );
+      }
+
+      .wish-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .wish-card {
+        background: var(--color-cream);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        font-style: italic;
+        border: 2px solid var(--color-accent);
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .wish-card:hover {
+        background: var(--color-accent);
+        color: var(--color-text-light);
+        transform: rotate(1deg);
+      }
+
+      .wish-card p {
+        font-size: 1.1em;
+        margin: 0;
+      }
+      .wish-card strong {
+        font-weight: 700;
+      }
+
+      /*
+        ------------------------------------------
+        6. SURPRISE SECTION
+        ------------------------------------------
+        */
+      #surprise {
+        background: var(--color-text-dark);
+        color: var(--color-text-light);
+        text-align: center;
+        min-height: 50vh;
+      }
+
+      .surprise-text {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        color: var(--color-cream);
+      }
+
+      #surprise-btn {
+        padding: 18px 45px;
+        font-size: 1.3em;
+        font-weight: 700;
+        background-color: var(--color-accent);
+        color: var(--color-text-light);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 0 20px var(--color-accent);
+        transition: background-color 0.3s ease, transform 0.1s ease,
+          box-shadow 0.3s ease;
+        animation: floatingPulse 2s infinite;
+      }
+
+      #surprise-btn:hover {
+        background-color: #ff3388;
+        transform: scale(1.05);
+        box-shadow: 0 0 30px #ff3388;
+      }
+
+      #surprise-btn:active {
+        transform: scale(0.98);
+      }
+
+      @keyframes floatingPulse {
+        0% {
+          transform: translateY(0px);
+          box-shadow: 0 0 20px var(--color-accent);
+        }
+        50% {
+          transform: translateY(-5px);
+          box-shadow: 0 5px 25px var(--color-accent), 0 0 30px var(--color-pink);
+        }
+        100% {
+          transform: translateY(0px);
+          box-shadow: 0 0 20px var(--color-accent);
+        }
+      }
+
+      #secret-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3.5em;
+        font-family: "Dancing Script", cursive;
+        color: var(--color-cream);
+        background: rgba(0, 0, 0, 0.7);
+        padding: 30px 50px;
+        border-radius: 15px;
+        z-index: 1000;
+        text-shadow: 0 0 10px var(--color-accent), 0 0 20px var(--color-pink);
+        display: none;
+        animation: revealPop 1s forwards;
+        max-width: 90%;
+        text-align: center;
+      }
+
+      @keyframes revealPop {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.5);
+        }
+        80% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      /*
+        ------------------------------------------
+        7. FOOTER
+        ------------------------------------------
+        */
+      footer {
+        background: var(--color-accent);
+        color: var(--color-text-light);
+        text-align: center;
+        padding: 25px;
+        font-size: 1.1em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /*
+        ------------------------------------------
+        8. MEDIA QUERIES (RESPONSIVENESS)
+        ------------------------------------------
+        */
+      @media (max-width: 768px) {
+        h2 {
+          font-size: 2.5em;
+          margin-bottom: 30px;
+        }
+        section {
+          padding: 60px 4%;
+        }
+        .hero-heading {
+          font-size: 10vw;
+        }
+        .hero-subheading {
+          font-size: 1.5rem;
+        }
+        .message-card {
+          padding: 25px;
+        }
+        .message-card p {
+          font-size: 1em;
+        }
+        .signature {
+          font-size: 1.8em;
+        }
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+        .photo-card img {
+          height: 200px;
+        }
+        .wish-grid {
+          grid-template-columns: 1fr;
+        }
+        #surprise-btn {
+          padding: 15px 35px;
+          font-size: 1.2em;
+        }
+        #secret-message {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="hero">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <h1 class="hero-heading">Happy Birthday Sakshi 🎂</h1>
+      <h3 class="hero-subheading">
+        Meri chhoti behen jaisi best sister ke liye...
+      </h3>
+      <p class="hero-line">
+        "Jahan duniya rukti hai, wahan se tera saath shuru hota hai. Tu meri
+        duniya hai. 🌍"
+      </p>
+    </section>
+    Badi
+    <section id="message">
+      <h2>My Dearest Sakshi Di,</h2>
+      <div class="message-card">
+        <p>
+          I know you are older, wiser, and definitely my "Badi Behen", but in my
+          heart, you'll always be my playful, sometimes annoying, but ultimately
+          my favourite "chhoti behen" jaisi. You have that pure, child-like joy
+          and the strength of a true elder all rolled into one beautiful person.
+        </p>
+        <p>
+          You are more than just a sister; you are my biggest support, the first
+          person I share my triumphs and my fears with, and truly my "best
+          friend". Life throws its challenges, but knowing that your smile is
+          there to light up the way makes everything easier.
+        </p>
+        <p>
+          Your journey inspires me every day. Thank you for setting an example
+          of grace, kindness, and resilience. Har mushkil mein, har khushi mein,
+          I promise I will always stand right here by your side, protecting and
+          cheering you on.
+        </p>
+        <p>
+          May your special day be filled with all the magic and happiness you
+          deserve.
+        </p>
+        <span class="signature">Tera Chhota (but protective) Bhai</span>
+      </div>
+    </section>
+
+    <section id="memories" class="reveal">
+      <h2>Our Beautiful Moments Together 📸</h2>
+
+      <div class="gallery premium-gallery">
+        <!-- Repeat for 12 images -->
+        <div class="photo-card premium" data-img="assets/img1.jpeg">
+          <img src="assets/img1.jpeg" />
+          <p>Bachpan wali masti and those silly fights!</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img2.jpeg">
+          <img src="assets/img2.jpeg" />
+          <p>Best sibling vibes – always on the same wavelength 😉</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img3.jpeg">
+          <img src="assets/img3.jpeg" />
+          <p>Festive smiles! The joy you bring to every occasion ✨</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img13.jpeg">
+          <img src="assets/img13.jpeg" />
+          <p>Har pal saath, a bond that's unbreakable 💖</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img5.jpeg">
+          <img src="assets/img5.jpeg" />
+          <p>Smile that fixes everything 😌</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img6.jpeg">
+          <img src="assets/img6.jpeg" />
+          <p>Late night talks 🌙</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img7.jpeg">
+          <img src="assets/img7.jpeg" />
+          <p>Together is always better 🤍</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img8.jpeg">
+          <img src="assets/img8.jpeg" />
+          <p>Perfect candid moment 📷</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img9.jpeg">
+          <img src="assets/img9.jpeg" />
+          <p>Pure happiness 💫</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img10.jpeg">
+          <img src="assets/img10.jpeg" />
+          <p>Unfiltered smiles 😄</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img11.jpeg">
+          <img src="assets/img11.jpeg" />
+          <p>Best memories 💕</p>
+        </div>
+
+        <div class="photo-card premium" data-img="assets/img14.jpeg">
+          <img src="assets/img14.jpeg" />
+          <p>Forever my favorite 🫶</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULLSCREEN IMAGE VIEWER -->
+    <div class="lightbox" id="lightbox">
+      <span id="closeLightbox">×</span>
+      <img id="lightboxImg" />
+    </div>
+
+    <section id="wishes">
+      <h2>Wishes Filled with Love 💕</h2>
+      <div class="wish-grid">
+        <div class="wish-card">
+          <p>
+            Happy Birthday, Di! You are my first teacher and my lifelong guide.
+            May your life sparkle.
+          </p>
+        </div>
+        <div class="wish-card">
+          <p>
+            To my adorable "chhoti behen" jaisi, may your path be forever
+            blessed with success and laughter.
+          </p>
+        </div>
+        <div class="wish-card">
+          <p>
+            Tum hamesha hasti raho! Your laughter is the best sound in the
+            house. Love you, Sakshi.
+          </p>
+        </div>
+        <div class="wish-card">
+          <p>
+            Wishing the kindest soul I know a phenomenal birthday. You deserve
+            the world and more.
+          </p>
+        </div>
+        <div class="wish-card">
+          <p>
+            Sending the biggest hug to the person who makes me believe in
+            myself. Happy Birthday!
+          </p>
+        </div>
+        <div class="wish-card">
+          <p>
+            Tu meri strength hai, "meri chhoti behen". Stay amazing and strong
+            always. 💖
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="surprise">
+      <h2>A Little Extra Something...</h2>
+      <p class="surprise-text">A secret message I want you to read today.</p>
+      <button id="surprise-btn">Click for a Secret Surprise 🎁</button>
+    </section>
+
+    <div id="secret-message">
+      Tu meri chhoti behen jaisi hi rahegi – cute, strong aur priceless 💕
+    </div>
+
+    <footer>Made by malay patel 🎁</footer>
+    <script>
+      const cards = document.querySelectorAll(".photo-card.premium");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const closeBtn = document.getElementById("closeLightbox");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const imgSrc = card.dataset.img; // ✅ SAFER METHOD
+          lightbox.classList.add("active");
+          lightboxImg.src = imgSrc;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+        lightboxImg.src = "";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+          lightboxImg.src = "";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- 1. Smooth Scroll Reveal Animation (Intersection Observer) ---
+        const sections = document.querySelectorAll("section");
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+
+        // --- 2. Special Surprise Button Logic ---
+        const surpriseBtn = document.getElementById("surprise-btn");
+        const secretMessage = document.getElementById("secret-message");
+
+        surpriseBtn.addEventListener("click", () => {
+          // Show the hidden message
+          secretMessage.style.display = "block";
+
+          // Vibrate the button (fun effect)
+          if (navigator.vibrate) {
+            navigator.vibrate(100);
+          }
+
+          // Hide the message after a few seconds
+          setTimeout(() => {
+            secretMessage.style.opacity = 0;
+            setTimeout(() => {
+              secretMessage.style.display = "none";
+              secretMessage.style.opacity = 1; // Reset opacity for next click
+            }, 500);
+          }, 4000); // Display for 4 seconds
+        });
+      });
+    </script>
+  </body>
+</html>
